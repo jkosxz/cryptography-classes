@@ -1,0 +1,29 @@
+{
+ "listOfDecryptedEntries": [
+  {
+   "cipheredText": "C yun ujjfy",
+   "decipheredText": "I eat apple",
+   "numberOfShifts": 20
+  },
+  {
+   "cipheredText": "Kyv trk zj scrtb",
+   "decipheredText": "The cat is black",
+   "numberOfShifts": 17
+  },
+  {
+   "cipheredText": "F alkq hklt texq ql pxv",
+   "decipheredText": "I dont know what to say",
+   "numberOfShifts": 23
+  },
+  {
+   "cipheredText": "Pda ywn eo ikrejc",
+   "decipheredText": "The car is moving",
+   "numberOfShifts": 22
+  },
+  {
+   "cipheredText": "Bhvwhugdb L vwxglhg iru wrgdbv hadp",
+   "decipheredText": "Yesterday I studied for todays exam",
+   "numberOfShifts": 3
+  }
+ ]
+}
