@@ -2,3 +2,4 @@ venv
 .idea
 **/files
 (2) hash functions/files/*
+(3) hashing passwords/passwords.db
