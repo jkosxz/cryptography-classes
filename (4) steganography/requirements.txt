@@ -1,0 +1,3 @@
+fastapi==0.110.1
+stegano==0.11.3
+aiofils==23.2.1

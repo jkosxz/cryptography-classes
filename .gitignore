@@ -3,3 +3,5 @@ venv
 **/files
 (2) hash functions/files/*
 (3) hashing passwords/passwords.db
+(4) steganography/images/*
+**/__pycache__
