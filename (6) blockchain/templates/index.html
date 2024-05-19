@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Blockchain</title>
+    <script>
+        async function fetchChain() {
+            const response = await fetch('/chain');
+            const chain = await response.json();
+            const chainContainer = document.getElementById('chain');
+            chainContainer.innerHTML = '';
+
+            chain.forEach(block => {
+                const blockElement = document.createElement('div');
+                blockElement.className = 'block';
+                blockElement.innerHTML = `
+                    <p>Index: ${block.index}</p>
+                    <p>Previous Hash: ${block.previous_hash}</p>
+                    <p>Timestamp: ${block.timestamp}</p>
+                    <p>Data: ${block.data}</p>
+                    <p>Hash: ${block.hash}</p>
+                `;
+                chainContainer.appendChild(blockElement);
+            });
+        }
+
+        async function addBlock() {
+            const dataInput = document.getElementById('data');
+            const data = dataInput.value;
+
+            await fetch('/add_block', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({ data })
+            });
+
+            dataInput.value = '';
+            await fetchChain();
+        }
+
+        document.addEventListener('DOMContentLoaded', function() {
+            fetchChain();
+
+            const addButton = document.getElementById('addBlockButton');
+            addButton.addEventListener('click', addBlock);
+        });
+    </script>
+</head>
+<body>
+    <h1>Simple Blockchain</h1>
+    <div>
+        <input type="text" id="data" placeholder="Enter block data">
+        <button id="addBlockButton">Add Block</button>
+    </div>
+    <h2>Blockchain:</h2>
+    <div id="chain">
+
+    </div>
+</body>
+</html>
